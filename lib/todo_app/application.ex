@@ -7,11 +7,19 @@ defmodule TodoApp.Application do
 
   @impl true
   def start(_type, _args) do
+    # generates a keyword list of type ==>
+    # `[database: "/home/your_home_dir/.config/todo_app/database.sqlite3"]`
+    Application.put_env(:todo_app, TodoApp.Repo,
+      database: Path.join(config_dir(), "/database.sqlite3")
+    )
+
+    # {Ecto.Migrator,
+    #    repos: Application.fetch_env!(:todo_app, :ecto_repos), skip: skip_migrations?()},
+
     children = [
       TodoAppWeb.Telemetry,
       TodoApp.Repo,
-      {Ecto.Migrator,
-       repos: Application.fetch_env!(:todo_app, :ecto_repos), skip: skip_migrations?()},
+      {Ecto.Migrator, repos: Application.fetch_env!(:todo_app, :ecto_repos), skip: false},
       {DNSCluster, query: Application.get_env(:todo_app, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: TodoApp.PubSub},
       # Start a worker by calling: TodoApp.Worker.start_link(arg)
@@ -43,9 +51,13 @@ defmodule TodoApp.Application do
     :ok
   end
 
-  defp skip_migrations?() do
-    # By default, sqlite migrations are run when using a release
-    System.get_env("RELEASE_NAME") != nil
+  # defp skip_migrations?() do
+  #   # By default, sqlite migrations are run when using a release
+  #   System.get_env("RELEASE_NAME") != nil
+  # end
+
+  defp config_dir() do
+    Path.join([Desktop.OS.home(), ".config", "todo_app"])
   end
 end
 
