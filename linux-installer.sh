@@ -1,5 +1,8 @@
 #!/bin/bash
 
+
+# Generate SECRET_KEY
+
 OUTPUT="$(exec mix phx.gen.secret)"
 
 export SECRET_KEY_BASE=$OUTPUT
@@ -9,6 +12,10 @@ export SECRET_KEY_BASE=$OUTPUT
 MIX_ENV=prod mix assets.deploy
 
 MIX_ENV=prod mix release
+
+# Generate version application
+
+VERSION="$(exec mix app.version)"
 
 # Generate files
 
@@ -23,10 +30,10 @@ EOF
 
 cat > elixir-desktop-todoapp.desktop << EOF
 [Desktop Entry]
-Version=0.1.0
+Version=$VERSION
 Type=Application
-Name=Todo App
-Comment=Elixir Desktop Todoapp Demo
+Name=Todo App v$VERSION
+Comment=Elixir Desktop Todoapp Demo v$VERSION
 Icon=$HOME/.local/bin/todo_app/lib/todo_app-0.1.0/priv/static/images/icon.png
 Exec=sh $HOME/.local/bin/todo_app/run
 Path=$HOME/.local/bin/todo_app

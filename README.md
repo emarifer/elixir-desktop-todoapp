@@ -6,8 +6,7 @@
 
 <br />
 
-> 🚧 This is a work in progress and therefore you should expect that the
-> application may not have all the features at this moment.
+<img src="docs/screenshot_elexir-desktop-todoapp.gif" width="50%">
 
 <br />
 
