@@ -28,9 +28,7 @@ In this case, we use the [`Desktop`](https://hexdocs.pm/desktop/readme.html) lib
 
 However, the library works perfectly on older versions of Phoenix-Liveview(`Phoenix v1.7`, `Liveview v0.20`, `phoenix_html v3.3` y `phoenix_view v2.0`) if we choose to forgo the latter advantages offered by the versions we use here. However, it should be noted that the main [`contributor`](https://github.com/dominicletz) to the development of this library [`promises to update`](https://github.com/elixir-desktop/deployment/issues/7#issuecomment-2619596018) it to make it compatible with the latest versions of Phoenix-Liveview.
 
-Another topic that is considerably less mature than those mentioned above is the bundling of build artifacts and assets for distribution of executables. In this regard, here you can see the status of the library's [`roadmap`](https://hexdocs.pm/desktop/readme.html#status-roadmap) and what its authors intend to accomplish.
-
-Let's hope this fantastic project for the Elixir ecosystem continues to develop 🙏.
+You can see the status of the library's [`roadmap`](https://hexdocs.pm/desktop/readme.html#status-roadmap) and what its authors intend to accomplish. Let's hope this fantastic project for the Elixir ecosystem continues to develop 🙏.
 
 ---
 
