@@ -62,3 +62,13 @@ defmodule TodoApp.Application do
 end
 
 # export WEBKIT_DISABLE_COMPOSITING_MODE=1
+
+# REFERENCES:
+# https://github.com/asdf-vm/asdf-erlang/issues/203#issuecomment-1519137578
+# export KERL_CONFIGURE_OPTIONS="--without-javac --enable-wx --enable-webview"
+# https://hexdocs.pm/desktop/getting_started.html#gnu-linux
+# https://github.com/version-fox/vfox-erlang/issues/9
+# https://hexdocs.pm/desktop/your_first_desktop_app.html
+# https://copier-coder.com/creer-une-application-windows-avec-elixir-desktop/
+#
+# https://asdf-vm.com/guide/getting-started.html

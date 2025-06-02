@@ -9,7 +9,14 @@ defmodule TodoApp.MixProject do
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      package: package(),
+      releases: [
+        default: [
+          applications: [runtime_tools: :permanent, ssl: :permanent],
+          steps: [:assemble, &Desktop.Deployment.generate_installer/1]
+        ]
+      ]
     ]
   end
 
@@ -55,7 +62,8 @@ defmodule TodoApp.MixProject do
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.5"},
-      {:desktop, "~> 1.5"}
+      {:desktop, "~> 1.5"},
+      {:desktop_deployment, github: "elixir-desktop/deployment", runtimes: false}
     ]
   end
 
@@ -80,4 +88,21 @@ defmodule TodoApp.MixProject do
       ]
     ]
   end
+
+  defp package() do
+    [
+      name: "TodoApp",
+      name_long: "TodoApp",
+      description: "TodoApp is an Elixir App for Desktop",
+      description_long: "TodoApp is an Elixir App for Desktop is powered by Phoenix Liveview",
+      icon: "priv/static/images/icon.png",
+      # https://developer.gnome.org/menu-spec/#additional-category-registry
+      category_gnome: "GNOME;GTK;Office;",
+      category_macos: "public.app-category.productivity",
+      identifier: "io.todoapp.app"
+    ]
+  end
 end
+
+# REFERENCES:
+# https://github.com/elixir-desktop/deployment

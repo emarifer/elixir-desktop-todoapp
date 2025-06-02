@@ -32,16 +32,31 @@ You can see the status of the library's [`roadmap`](https://hexdocs.pm/desktop/r
 
 ---
 
-### 👨‍🚀 Getting Started
+### 👨‍🚀 <ins>Getting Started</ins>
 
-To start your Phoenix server:
+- ### Installing the application
 
-  * Run `mix setup` to install and setup dependencies
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+  * #### Prerequisites:
+  
+    Obviously you will need to have both `Elixir` and `Erlang/OTP` installed. Regardless of the operating system you have, it is recommended to install both with the [`asdf`](https://asdf-vm.com/guide/getting-started.html) application (a tool version manager). This will not only allow you to install Elixir, Erlang/OTP, or NodeJS under multiple versions that you can easily change depending on your project's needs, but it will also give you the opportunity to configure your Erlang/OTP installation, which is vitally important in our case, as we'll see below. You should read carefully. You will need to carefully read the `asdf` installation instructions for your operating system and install the Erlang and Elixir plugins (`NodeJS` is optional in our case) that will then allow you to install these languages ​​on your system in addition to the [`BEAM virtual machine`](https://en.wikipedia.org/wiki/BEAM_(Erlang_virtual_machine)).
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+    >[!NOTE]
+    >***As we just mentioned, installing Erlang requires a prior configuration that will allow us to have available on our system the `wxWidgets` library (which guarantees a graphical environment for Erlang, simply put) and `wxWebView` which is a WebView is a browser engine embedded within an application, allowing it to display web content without needing a separate browser window. It essentially acts as a miniature web browser within the app. First, you'll need to check which packages you should and shouldn't install based on your system. You can find information about the packages needed by `elixir-desktop` [`here`](https://hexdocs.pm/desktop/getting_started.html). For its part, the Erlang installation needs to activate some flags. You can find information about this [`here`](https://github.com/asdf-vm/asdf-erlang?tab=readme-ov-file#asdf-erlang) and [`here`](https://github.com/asdf-vm/asdf-erlang/issues/203#issuecomment-1519137578). You can activate the mentioned flags by exporting at least the following environment variables  (they are the ones truly required in our case) BEFORE installing Erlang con el comando `asdf install erlang <version>`:***
+
+    ```
+    $ export KERL_CONFIGURE_OPTIONS="--without-javac --enable-wx --enable-webview"
+    ```
+
+    Now you'll have Erlang, Elixir, and NodeJS (optional, as mentioned) installed and properly configured on your system. If you're planning to develop web content using the [`Phoenix`]()https://hexdocs.pm/phoenix/overview.html framework or simply modify this application, you'll need to install the Phoenix application generator `phx.new`. This is possible thanks to the fact that, in addition to Erlang/Elixir, we've also installed `IEx` (Elixir's interactive console) and its powerful project management tool Elixir, `Mix`:
+
+    ```
+    $ mix archive.install hex phx_new
+    ```
+
+  * #### Testing the application on our system:
+
+  
 
 ---
 
