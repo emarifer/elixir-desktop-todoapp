@@ -94,7 +94,7 @@ defmodule TodoApp.MixProject do
       name: "TodoApp",
       name_long: "TodoApp",
       description: "TodoApp is an Elixir App for Desktop",
-      description_long: "TodoApp is an Elixir App for Desktop is powered by Phoenix Liveview",
+      description_long: "TodoApp is an Elixir App for Desktop powered by Phoenix Liveview",
       icon: "priv/static/images/icon.png",
       # https://developer.gnome.org/menu-spec/#additional-category-registry
       category_gnome: "GNOME;GTK;Office;",

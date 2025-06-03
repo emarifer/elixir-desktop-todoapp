@@ -72,3 +72,15 @@ end
 # https://copier-coder.com/creer-une-application-windows-avec-elixir-desktop/
 #
 # https://asdf-vm.com/guide/getting-started.html
+
+# git clone -b deployment-on-linux https://github.com/emarifer/elixir-desktop-todoapp.git
+
+# mix deps.get
+
+# mix phx.gen.secret
+
+# export SECRET_KEY_BASE=????
+
+# mix assets.deploy
+
+# mix desktop.installer
