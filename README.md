@@ -32,9 +32,9 @@ You can see the status of the library's [`roadmap`](https://hexdocs.pm/desktop/r
 
 ---
 
-### 👨‍🚀 <ins>Getting Started</ins>
+### 👨‍🚀 Getting Started
 
-- ### Installing the application
+- ### <ins>Installing the application</ins>
 
   * #### Prerequisites:
   
@@ -54,9 +54,69 @@ You can see the status of the library's [`roadmap`](https://hexdocs.pm/desktop/r
     $ mix archive.install hex phx_new
     ```
 
-  * #### Testing the application on our system:
+  * #### Testing the application on our system (Window, MacOS, Linux):
+    Once the prerequisites are met, we are ready to install the application on our system.
 
-  
+    First, clone this repository and point to the `deployment` branch:
+
+    ```
+    $ git clone https://github.com/emarifer/elixir-desktop-todoapp
+    $ cd elixir-desktop-todoapp
+    $ git checkout deployment
+    ```
+
+    Or directly clone the repository in the mentioned branch:
+
+    ```
+    $ git clone -b deployment https://github.com/emarifer/elixir-desktop-todoapp.git
+    $ cd elixir-desktop-todoapp
+    ```
+
+    Install the dependencies with the following command (when installing Elixir we already have the `Mix` tool):
+
+    ```
+    $ mix deps.get
+    ```
+
+    Now we need to generate a secret key (which the Phoenix framework needs) and which will be "stored" in the production binary we are going to create:
+    
+    ```
+    $ mix phx.gen.secret
+    ```
+
+    We copy the character sequence generated and export it as an environment variable (`SECRET_KEY_BASE`) for the current session of our terminal:
+
+    ```
+    $ export SECRET_KEY_BASE=qkm4wKDNXPmzSI7F6lqwcWw/gQu0fG6KxOV+iatmXBTIIZ3z383DuyD2YqgREq38 # (i.e)
+    ```
+
+    Now we prepare the assets for production:
+
+    ```
+    $ mix assets.deploy
+    ```
+
+    And finally, we generate the binaries with the following command:
+
+    ```
+    $ mix desktop.installer
+    ```
+
+    This `Mix` tool task generates binary installers for your `Elixir-Desktop` project in the native formats corresponding to your OS. The output formats are:
+
+      - `Windows`: .exe installer (NSIS-based)
+      - `MacOS`: .dmg download package
+      - `Linux`: .run makeself installer
+
+    The creation of these binary installers (which may take some time, depending on your machine/OS), leaves the installers in the `_build/prod/` folder (`_build/prod/TodoApp-0.1.0-linux-x86_64.run` or the extension corresponding to your OS).
+
+    If we run the installer, it will create a folder in the user's home folder (`TodoApp` on Linux, or in the location corresponding to your OS and with the appropriate integration to launch the application). This folder includes, like any Elixir release, the `BEAM VM` and `runtime`, the application-related binaries and the assets. It also packages all the (graphical) libraries your OS needs, which we installed in the previous steps, making it standalone. Therefore, the application would work, at least in theory, on any system just like the one we compiled it on. The downside is that it's quite large, so for Linux users, we've created a smaller version (see [below](#building-the-application-only-for-linux)).
+
+    If something goes wrong in your case, you should review the [`documentation`](https://github.com/elixir-desktop/deployment?tab=readme-ov-file#generating-installers) for the library that compiles the application, called `deployment`, which was created by the authors of `Elixir-Desktop`.
+
+  * #### Building the application only for Linux:
+
+- ### <ins>Modifying the application (Dev mode)</ins>  
 
 ---
 

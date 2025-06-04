@@ -73,7 +73,7 @@ end
 #
 # https://asdf-vm.com/guide/getting-started.html
 
-# git clone -b deployment-on-linux https://github.com/emarifer/elixir-desktop-todoapp.git
+# git clone -b deployment https://github.com/emarifer/elixir-desktop-todoapp.git
 
 # mix deps.get
 
