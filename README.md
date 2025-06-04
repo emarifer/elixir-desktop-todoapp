@@ -114,7 +114,46 @@ You can see the status of the library's [`roadmap`](https://hexdocs.pm/desktop/r
 
   * #### Building the application only for Linux:
 
+    Clone the `deployment-on-linux` branch directly and navigate to the project folder that was generated on your system:
+
+    ```
+    $ git clone -b deployment-on-linux https://github.com/emarifer/elixir-desktop-todoapp.git
+    $ cd elixir-desktop-todoapp
+    ```
+
+    Now run the `linux-installer.sh` script (if you can't run it, give it execution permissions with `chmod +x linux-installer.sh`):
+
+    ```
+    $ ./linux-installer.sh
+    ```
+
+    The script will run the necessary configuration commands, compile the application as an Elixir `release`, and install the application for the local user by generating an entry in the start menu.
+
+    The build size will be much smaller than that of the `deployment` library because it only strictly includes the artifacts corresponding to the application itself, the Erlang virtual machine, and the runtime. The disadvantage is that it does not include the graphical libraries (wxWidgets and webview), which must be installed on the system, otherwise the application will not start.
+
 - ### <ins>Modifying the application (Dev mode)</ins>  
+
+  If you've installed all the requirements outlined in the previous steps and want to modify the application, to improve your development experience you can install 3 excellent extensions if you work with VScode: [`ElixirLS`](https://marketplace.visualstudio.com/items?itemName=JakeBecker.elixir-ls), [`phoenixframework`](https://marketplace.visualstudio.com/items?itemName=phoenixframework.phoenix) and [`Tailwind CSS IntelliSense`](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss), and follow the instructions to correctly configure your work environment.
+
+  So, to work with the application clone the repository (in the `main` branch) and enter the project folder:
+
+  ```
+  $ git clone https://github.com/emarifer/elixir-desktop-todoapp.git
+  $ cd elixir-desktop-todoapp
+  ```
+  Now run the command in the terminal that starts any `Phoenix` application, although the command `iex -S mix` would also work:
+
+  ```
+  $ mix phx.server # or iex -S mix
+  ```
+
+  If you're using `Linux-Ubuntu` (or derivatives), it's quite possible that when you open the application window, it will be blank. This is a known issue that can be resolved by exporting the following environment variable for the current terminal session.
+
+  ```
+  $ export WEBKIT_DISABLE_COMPOSITING_MODE=1
+  ```
+
+  Alternatively, you can run a script (a `run` file) that does the same thing, but more conveniently. Each time you save changes to your code, the application window will reload. Likewise, if you paste the URL that appears in the terminal each time it reloads into your browser's address bar, you'll be able to view the application window in the browser and easily access its `development tools`.
 
 ---
 
