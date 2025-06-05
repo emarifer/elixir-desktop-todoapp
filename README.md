@@ -85,7 +85,7 @@ You can see the status of the library's [`roadmap`](https://hexdocs.pm/desktop/r
     We copy the character sequence generated and export it as an environment variable (`SECRET_KEY_BASE`) for the current session of our terminal:
 
     ```
-    $ export SECRET_KEY_BASE=qkm4wKDNXPmzSI7F6lqwcWw/gQu0fG6KxOV+iatmXBTIIZ3z383DuyD2YqgREq38 # (i.e)
+    $ export SECRET_KEY_BASE=qkm4wKDNXPmzSI7F6lqwcWw/gQu0fG6KxOV+iatmXBTIIZ3z383DuyD2YqgREq38 # (e.g.)
     ```
 
     Now we prepare the assets for production:
