@@ -46,7 +46,7 @@ You can see the status of the library's [`roadmap`](https://hexdocs.pm/desktop/r
     $ export KERL_CONFIGURE_OPTIONS="--without-javac --enable-wx --enable-webview"
     ```
 
-    Now you'll have Erlang, Elixir, and NodeJS (optional, as mentioned) installed and properly configured on your system. If you're planning to develop web content using the [`Phoenix`]()https://hexdocs.pm/phoenix/overview.html framework or simply modify this application, you'll need to install the Phoenix application generator `phx.new`. This is possible thanks to the fact that, in addition to Erlang/Elixir, we've also installed `IEx` (Elixir's interactive console) and its powerful project management tool Elixir, `Mix`:
+    Now you'll have Erlang, Elixir, and NodeJS (optional, as mentioned) installed and properly configured on your system. If you're planning to develop web content using the [`Phoenix framework`](https://hexdocs.pm/phoenix/overview.html) or simply modify this application, you'll need to install the Phoenix application generator `phx.new`. This is possible thanks to the fact that, in addition to Erlang/Elixir, we've also installed `IEx` (Elixir's interactive console) and its powerful project management tool Elixir, `Mix`:
 
     ```
     $ mix archive.install hex phx_new
