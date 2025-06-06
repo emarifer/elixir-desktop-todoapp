@@ -144,10 +144,10 @@ jobs:
         mix local.rebar --force
         mix deps.get
 
-    # - name: "npm install"
-    #   shell: msys2 {0}
-    #   run: |
-    #     cd assets && npm install
+    - name: "npm install"
+      shell: msys2 {0}
+      run: |
+        cd assets && npm install
 
     - name: "Build Release"
       env:
