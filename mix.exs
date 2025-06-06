@@ -63,7 +63,7 @@ defmodule TodoApp.MixProject do
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.5"},
       {:desktop, "~> 1.5"},
-      {:desktop_deployment, github: "elixir-desktop/deployment", runtimes: false}
+      {:desktop_deployment, github: "elixir-desktop/deployment"}
     ]
   end
 
