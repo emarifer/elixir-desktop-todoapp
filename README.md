@@ -46,7 +46,7 @@ You can see the status of the library's [`roadmap`](https://hexdocs.pm/desktop/r
     $ export KERL_CONFIGURE_OPTIONS="--without-javac --enable-wx --enable-webview"
     ```
 
-    Now you'll have Erlang, Elixir, and NodeJS (optional, as mentioned) installed and properly configured on your system. If you're planning to develop web content using the [`Phoenix framework`](https://hexdocs.pm/phoenix/overview.html) or simply modify this application, you'll need to install the Phoenix application generator `phx.new`. This is possible thanks to the fact that, in addition to Erlang/Elixir, we've also installed `IEx` (Elixir's interactive console) and its powerful project management tool Elixir, `Mix`:
+    Now you'll have Erlang, Elixir, and NodeJS (optional, as mentioned) installed and properly configured on your system. If you're planning to develop web content using the [`Phoenix`](https://hexdocs.pm/phoenix/overview.html) framework or simply modify this application, you'll need to install the Phoenix application generator `phx.new`. This is possible thanks to the fact that, in addition to Erlang/Elixir, we've also installed `IEx` (Elixir's interactive console) and its powerful project management tool Elixir, `Mix`:
 
     ```
     $ mix archive.install hex phx_new
@@ -121,15 +121,27 @@ You can see the status of the library's [`roadmap`](https://hexdocs.pm/desktop/r
     $ cd elixir-desktop-todoapp
     ```
 
-    Now run the `linux-installer.sh` script (if you can't run it, give it execution permissions with `chmod +x linux-installer.sh`):
+    Now run the following command to get the project dependencies:
 
     ```
-    $ ./linux-installer.sh
+    $ mix deps.get
     ```
 
-    The script will run the necessary configuration commands, compile the application as an Elixir `release`, and install the application for the local user by generating an entry in the start menu.
+    Next, run the following Mix task:
+
+    ```
+    $ mix app.installer
+    ```
+
+    The Mix task will run the necessary configuration commands, compile the application as an Elixir `release`, and install the application for the local user by generating an entry in the start menu.
 
     The build size will be much smaller than that of the `deployment` library because it only strictly includes the artifacts corresponding to the application itself, the Erlang virtual machine, and the runtime. The disadvantage is that it does not include the graphical libraries (wxWidgets and webview), which must be installed on the system, otherwise the application will not start.
+
+    If you want to completely remove the application from your system, simply run this:
+
+    ```
+    $ mix app.uninstaller
+    ```
 
 - ### <ins>Modifying the application (Dev mode)</ins>  
 
@@ -147,13 +159,21 @@ You can see the status of the library's [`roadmap`](https://hexdocs.pm/desktop/r
   $ mix phx.server # or iex -S mix
   ```
 
+  The difference between the two is that with `IEx` you will have access to the console in interactive mode but with the `mix phx.server` command you will not.
+
   If you're using `Linux-Ubuntu` (or derivatives), it's quite possible that when you open the application window, it will be blank. This is a known issue that can be resolved by exporting the following environment variable for the current terminal session.
 
   ```
   $ export WEBKIT_DISABLE_COMPOSITING_MODE=1
   ```
 
-  Alternatively, you can run a script (a `run` file) that does the same thing, but more conveniently. Each time you save changes to your code, the application window will reload. Likewise, if you paste the URL that appears in the terminal each time it reloads into your browser's address bar, you'll be able to view the application window in the browser and easily access its `development tools`.
+  Alternatively, if you are also on Linux, you can run the `Mix task` we implemented, `mix app.dev`, which does the same thing, but in a more convenient way:
+
+  ```
+  $ mix app.dev
+  ```
+
+  Every time you save changes to your code, the application window will reload. Also, if you paste the URL that appears in the terminal each time it reloads into your browser's address bar, you'll be able to see the application window in the browser and easily access its `development tools`.
 
 ---
 
