@@ -159,13 +159,21 @@ You can see the status of the library's [`roadmap`](https://hexdocs.pm/desktop/r
   $ mix phx.server # or iex -S mix
   ```
 
+  The difference between the two is that with `IEx` you will have access to the console in interactive mode but with the `mix phx.server` command you will not.
+
   If you're using `Linux-Ubuntu` (or derivatives), it's quite possible that when you open the application window, it will be blank. This is a known issue that can be resolved by exporting the following environment variable for the current terminal session.
 
   ```
   $ export WEBKIT_DISABLE_COMPOSITING_MODE=1
   ```
 
-  Alternatively, you can run a script (a `run` file) that does the same thing, but more conveniently. Each time you save changes to your code, the application window will reload. Likewise, if you paste the URL that appears in the terminal each time it reloads into your browser's address bar, you'll be able to view the application window in the browser and easily access its `development tools`.
+  Alternatively, if you are also on Linux, you can run the `Mix task` we implemented, `mix app.dev`, which does the same thing, but in a more convenient way:
+
+  ```
+  $ mix app.dev
+  ```
+
+  Every time you save changes to your code, the application window will reload. Also, if you paste the URL that appears in the terminal each time it reloads into your browser's address bar, you'll be able to see the application window in the browser and easily access its `development tools`.
 
 ---
 
