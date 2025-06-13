@@ -46,7 +46,7 @@ You can see the status of the library's [`roadmap`](https://hexdocs.pm/desktop/r
     $ export KERL_CONFIGURE_OPTIONS="--without-javac --enable-wx --enable-webview"
     ```
 
-    Now you'll have Erlang, Elixir, and NodeJS (optional, as mentioned) installed and properly configured on your system. If you're planning to develop web content using the [`Phoenix framework`](https://hexdocs.pm/phoenix/overview.html) or simply modify this application, you'll need to install the Phoenix application generator `phx.new`. This is possible thanks to the fact that, in addition to Erlang/Elixir, we've also installed `IEx` (Elixir's interactive console) and its powerful project management tool Elixir, `Mix`:
+    Now you'll have Erlang, Elixir, and NodeJS (optional, as mentioned) installed and properly configured on your system. If you're planning to develop web content using the [`Phoenix`](https://hexdocs.pm/phoenix/overview.html) framework or simply modify this application, you'll need to install the Phoenix application generator `phx.new`. This is possible thanks to the fact that, in addition to Erlang/Elixir, we've also installed `IEx` (Elixir's interactive console) and its powerful project management tool Elixir, `Mix`:
 
     ```
     $ mix archive.install hex phx_new
@@ -121,15 +121,27 @@ You can see the status of the library's [`roadmap`](https://hexdocs.pm/desktop/r
     $ cd elixir-desktop-todoapp
     ```
 
-    Now run the `linux-installer.sh` script (if you can't run it, give it execution permissions with `chmod +x linux-installer.sh`):
+    Now run the following command to get the project dependencies:
 
     ```
-    $ ./linux-installer.sh
+    $ mix deps.get
     ```
 
-    The script will run the necessary configuration commands, compile the application as an Elixir `release`, and install the application for the local user by generating an entry in the start menu.
+    Next, run the following Mix task:
+
+    ```
+    $ mix app.installer
+    ```
+
+    The Mix task will run the necessary configuration commands, compile the application as an Elixir `release`, and install the application for the local user by generating an entry in the start menu.
 
     The build size will be much smaller than that of the `deployment` library because it only strictly includes the artifacts corresponding to the application itself, the Erlang virtual machine, and the runtime. The disadvantage is that it does not include the graphical libraries (wxWidgets and webview), which must be installed on the system, otherwise the application will not start.
+
+    If you want to completely remove the application from your system, simply run this:
+
+    ```
+    $ mix app.uninstaller
+    ```
 
 - ### <ins>Modifying the application (Dev mode)</ins>  
 
