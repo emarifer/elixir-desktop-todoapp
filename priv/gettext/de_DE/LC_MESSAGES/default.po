@@ -8,146 +8,146 @@
 ### to merge POT files into PO files.
 msgid ""
 msgstr ""
-"Language: en\n"
+"Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: lib/todo_app_web/live/about_live.ex:10
 #, elixir-autogen, elixir-format
 msgid "About this app"
-msgstr ""
+msgstr "Über diese App"
 
 #: lib/todo_app_web/components/core_components.ex:488
 #, elixir-autogen, elixir-format
 msgid "Actions"
-msgstr ""
+msgstr "Aktionen"
 
 #: lib/todo_app_web/components/core_components.ex:160
 #, elixir-autogen, elixir-format
 msgid "Attempting to reconnect"
-msgstr ""
+msgstr "Versuche zu verbinden"
 
 #: lib/todo_app_web/components/core_components.ex:151
 #, elixir-autogen, elixir-format
 msgid "Error!"
-msgstr ""
+msgstr "Fehler!"
 
 #: lib/todo_app_web/components/core_components.ex:172
 #, elixir-autogen, elixir-format
 msgid "Hang in there while we get back on track"
-msgstr ""
+msgstr "Warten Sie, während wir wieder in die Spur kommen"
 
 #: lib/todo_app_web/components/core_components.ex:167
 #, elixir-autogen, elixir-format
 msgid "Something went wrong!"
-msgstr ""
+msgstr "Etwas ging schief!"
 
 #: lib/todo_app_web/components/core_components.ex:150
 #, elixir-autogen, elixir-format
 msgid "Success!"
-msgstr ""
+msgstr "Erfolg!"
 
 #: lib/todo_app_web/components/core_components.ex:155
 #, elixir-autogen, elixir-format
 msgid "We can't find the internet"
-msgstr ""
+msgstr "Wir können kein Internet finden"
 
 #: lib/todo_app_web/components/core_components.ex:76
 #: lib/todo_app_web/components/core_components.ex:130
 #, elixir-autogen, elixir-format
 msgid "close"
-msgstr ""
+msgstr "schließen"
 
 #: lib/todo_app_web/live/about_live.ex:14
 #, elixir-autogen, elixir-format
 msgid "A simple to-do manager so you don't forget your chores"
-msgstr ""
+msgstr "Ein einfacher Erledigungs-Manager, damit Sie ihre Hausarbeiten nicht vergessen"
 
 #: lib/todo_app_web/components/layouts/app.html.heex:62
 #, elixir-autogen, elixir-format
 msgid "More Info"
-msgstr ""
+msgstr "Mehr Info"
 
 #: lib/todo_app_web/components/layouts/app.html.heex:23
 #, elixir-autogen, elixir-format
 msgid "About"
-msgstr ""
+msgstr "Über"
 
 #: lib/todo_app_web/live/controllers_component.ex:20
 #, elixir-autogen, elixir-format
 msgid "Browser"
-msgstr ""
+msgstr "Browser"
 
 #: lib/todo_app_web/live/todo_item_component.ex:32
 #, elixir-autogen, elixir-format
 msgid "Delete to-do"
-msgstr ""
+msgstr "Löschen zu erledigen"
 
 #: lib/todo_app_web/live/select_language_component.ex:24
 #, elixir-autogen, elixir-format
 msgid "English"
-msgstr ""
+msgstr "Englisch"
 
 #: lib/todo_app_web/live/select_language_component.ex:33
 #, elixir-autogen, elixir-format
 msgid "German"
-msgstr ""
+msgstr "Deutsch"
 
 #: lib/todo_app_web/live/select_language_component.ex:42
 #, elixir-autogen, elixir-format
 msgid "French"
-msgstr ""
+msgstr "Französisch"
 
 #: lib/todo_app_web/live/select_language_component.ex:51
 #, elixir-autogen, elixir-format
 msgid "Portuguese"
-msgstr ""
+msgstr "Portugiesisch"
 
 #: lib/todo_app_web/components/layouts/app.html.heex:15
 #, elixir-autogen, elixir-format
 msgid "Home"
-msgstr ""
+msgstr "Zu Hause"
 
 #: lib/todo_app_web/live/controllers_component.ex:27
 #, elixir-autogen, elixir-format
 msgid "Observer"
-msgstr ""
+msgstr "Beobachter"
 
 #: lib/todo_app_web/live/controllers_component.ex:13
 #, elixir-autogen, elixir-format
 msgid "Quit"
-msgstr ""
+msgstr "Beenden"
 
 #: lib/todo_app_web/live/home_live.ex:42
 #, elixir-autogen, elixir-format
 msgid "Save"
-msgstr ""
+msgstr "Speichern"
 
 #: lib/todo_app_web/live/select_language_component.ex:15
 #, elixir-autogen, elixir-format
 msgid "Spanish"
-msgstr ""
+msgstr "Spanisch"
 
 #: lib/todo_app_web/live/home_live.ex:36
 #, elixir-autogen, elixir-format
 msgid "Description"
-msgstr ""
+msgstr "Beschreibung"
 
 #: lib/todo_app_web/live/home_live.ex:30
 #, elixir-autogen, elixir-format
 msgid "Title"
-msgstr ""
+msgstr "Titel"
 
 #: lib/todo_app_web/live/home_live.ex:127
 #, elixir-autogen, elixir-format
 msgid "An error occurred while trying to delete the to-do"
-msgstr ""
+msgstr "Ein Fehler ist aufgetreten beim Versuch die Erledigung zu löschen"
 
 #: lib/todo_app_web/live/todo_item_component.ex:35
 #, elixir-autogen, elixir-format
 msgid "Are you sure you want to delete this to-do?"
-msgstr ""
+msgstr "Sind Sie sicher, dass Sie die Erledigung löschen wollen?"
 
 #: lib/todo_app_web/live/home_live.ex:58
 #, elixir-autogen, elixir-format
 msgid "Add some to-dos"
-msgstr ""
+msgstr "Füge einige Erledigungen hinzu"
