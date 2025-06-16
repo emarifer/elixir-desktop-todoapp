@@ -74,6 +74,21 @@ msgstr "Eliminar to-do"
 msgid "English"
 msgstr "Inglés"
 
+#: lib/todo_app_web/live/select_language_component.ex:33
+#, elixir-autogen, elixir-format
+msgid "German"
+msgstr "Alemán"
+
+#: lib/todo_app_web/live/select_language_component.ex:42
+#, elixir-autogen, elixir-format
+msgid "French"
+msgstr "Francés"
+
+#: lib/todo_app_web/live/select_language_component.ex:51
+#, elixir-autogen, elixir-format
+msgid "Portuguese"
+msgstr "Portugués"
+
 #: lib/todo_app_web/components/layouts/app.html.heex:15
 #, elixir-autogen, elixir-format
 msgid "Home"
